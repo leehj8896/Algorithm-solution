@@ -17,7 +17,6 @@ private:
     int stepCount, pushCount;
 
 public:
-    //bool getFinished() { return finished; };
     int getCurrentStage() { return currentStage; }
     int getStepCount() { return stepCount; }
     int getPushCount() { return pushCount; }
@@ -226,15 +225,14 @@ int main()
     init_pair(1, COLOR_RED, COLOR_YELLOW);
     init_pair(2, COLOR_RED, COLOR_GREEN);
     bkgd(COLOR_PAIR(1));
-do
+    do
     {
-    attron(COLOR_PAIR(2));
-    border('*', '*', '*', '*', '*', '*', '*', '*');
-    attroff(COLOR_PAIR(2));
+        attron(COLOR_PAIR(2));
+        border('*', '*', '*', '*', '*', '*', '*', '*');
+        attroff(COLOR_PAIR(2));
 
-    attron(COLOR_PAIR(1));
+        attron(COLOR_PAIR(1));
 
-    
         char buff[4];
         sprintf(buff, "%d", game.getStepCount());
         mvprintw(2, 5, buff);
@@ -257,10 +255,6 @@ do
         game.move(input);
 
         clear();
-        refresh();
-        if (game.getFinised()[game.getCurrentStage()]){
-            
-        }
     } while (!game.checkAllSuccess());
 
     attroff(COLOR_PAIR(1));
