@@ -1,58 +1,35 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
-class Solution {
+class Main {
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> list = new ArrayList<>();
-        int i=4;
-        while(i>=0){
-            // int tmp = Integer.parseInt(sc.nextLine());
-            int tmp = i;
-            list.add(tmp);
-            i--;
-        }
-        sc.close();
-        sort(list,0,list.size());
-        printInts(list);
-    }
-
-    private static void sort(ArrayList<Integer> list, int start, int end) {
-
-        if(end-start>=2){
-            int pivot = partition(list, start, end);
-            sort(list, start, pivot);
-            sort(list, pivot+1, end);
-        }
-    }
-
-    private static int partition(ArrayList<Integer> list, int start, int end) {
-
-        int pivot = list.get(end-1);
-        int smallEnd=0, bigEnd=0;
-        while(true){
-            if(bigEnd==end-1) break;
-
-            if(list.get(bigEnd)<pivot){
-                swap(list, smallEnd, bigEnd);
-                smallEnd++; bigEnd++;
-            }else if(list.get(bigEnd)>pivot){
-                bigEnd++;
+        
+        try {
+            BufferedReader br = new BufferedReader(
+                new InputStreamReader(System.in)
+            );
+            int n=Integer.parseInt(br.readLine());
+            int[] arr= new int[10001];
+            for(int i=0; i<n; i++){
+                int tmp = Integer.parseInt(br.readLine());
+                arr[tmp]++;
             }
+            br.close();
+
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+            for(int i=1; i<10001; i++){
+                for(int j=0; j<arr[i]; j++)
+                    bw.write(i+"\n");
+            }
+
+            bw.close();
+            // printInts(arr);
+            
+        } catch (Exception e) {
         }
-        swap(list, smallEnd, end-1);
-
-        return smallEnd;
-    }
-
-    private static void swap(ArrayList<Integer> list, int i, int j) {
-        int tmp=list.get(i);
-        list.set(i, list.get(j));
-        list.set(j, tmp);
-    }
-
-    private static void printInts(ArrayList<Integer> list) {
-        for(int n:list) System.out.println(n);
+        
     }
 }
