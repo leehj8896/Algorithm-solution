@@ -1,32 +1,29 @@
 import java.util.Arrays;
 
 class Solution {
+    int[] budgets;
+    int m;
 
-    public static int solution(int[] d, int budget) {
-        int answer = 0;
+    public int solution(int[] budgets, int M) {
+        this.budgets=budgets; this.m=M;
 
-        Arrays.sort(d);
-
-        int i = 0;  int sum = 0;
-        while(true){
-            sum += d[i];
-            if(sum > budget){
-                i--;
-                break;
-            }
-            if(i == d.length-1)
-                break;
-            i++;
-        }
-        answer = i + 1;
-
-        return answer;
+        Arrays.sort(budgets);
+        return getLimit(m,0);
     }
 
-    public static void main(String[] args) {
-        int[] d = {1,3,2,5,4};
-        
-        int budget = 9;
-        System.out.println(solution(d,budget));
+    private int getLimit(int n, int k) {
+
+        int avg= n / (budgets.length-k);
+        int i; int sum=0;
+        for(i=k; i<budgets.length; i++){
+            if(budgets[i]>avg){
+                break;
+            }else{
+                sum+=budgets[i];
+            }
+        }
+        if(k==i) return avg;
+        if(i==budgets.length) return budgets[i-1];
+        return getLimit(n-sum, i);
     }
 }
