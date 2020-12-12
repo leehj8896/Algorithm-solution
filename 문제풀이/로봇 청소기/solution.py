@@ -1,110 +1,88 @@
-def go(room, r, c, d):
+def get_left(pos):
 
-    room[r][c] = 1
+    if pos[2] == '북':
+        return [pos[0], pos[1]-1, '서']
+    elif pos[2] == '서':
+        return [pos[0]+1, pos[1], '남']
+    elif pos[2] == '남':
+        return [pos[0], pos[1]+1, '동']
+    elif pos[2] == '동':
+        return [pos[0]-1, pos[1], '북']
 
-    global result
-    result += 1
-
-    count = 0
-    while True:
-
-        d = get_left(d)
-        # N
-        if d == 0:
-            if room[r-1][c] == 0:
-                go(room, r-1, c, d)
-                break
-            else:
-                count += 1
-        # E
-        if d == 1:
-            if room[r][c+1] == 0:
-                go(room, r, c+1, d)
-                break
-            else:
-                count += 1
-        # S
-        if d == 2:
-            if room[r+1][c] == 0:
-                go(room, r+1, c, d)
-                break
-            else:
-                count += 1
-        # W
-        if d == 3:
-            if room[r][c-1] == 0:
-                go(room, r, c-1, d)
-                break
-            else:
-                count += 1
-
-        if count == 4:
-            # N
-            if d == 0:
-                if room[r+1][c] == 0:
-                    go(room, r+1, c, d)
-            # E
-            if d == 1:
-                if room[r][c-1] == 0:
-                    go(room, r, c-1, d)
-            # S
-            if d == 2:
-                if room[r-1][c] == 0:
-                    go(room, r-1, c, d)
-            # W
-            if d == 3:
-                if room[r][c+1] == 0:
-                    go(room, r, c+1, d)
-            break
-
-def get_left(d):
-
-    # N
-    if d == 0:
-        return 3
-    # E
-    if d == 1:
-        return 0
-    # S
-    if d == 2:
-        return 1
-    # W
-    if d == 3:
-        return 2
+def get_back(pos):
+    
+    if pos[2] == '북':
+        return [pos[0]+1, pos[1], '북']
+    elif pos[2] == '서':
+        return [pos[0], pos[1]+1, '서']
+    elif pos[2] == '남':
+        return [pos[0]-1, pos[1], '남']
+    elif pos[2] == '동':
+        return [pos[0], pos[1]-1, '동']
 
 
-# Init
-h, w = map(int, input('').split(' '))
-r, c, d = map(int, input('').split(' '))
-room = []
-for i in range(h):
-    room.append(list(map(int, input('').split(' '))))
+n, m = map(int, input('').split(' '))
+pos = list(map(int, input('').split(' ')))
+if pos[2] == 0:
+    pos[2] = '북'
+if pos[2] == 1:
+    pos[2] = '동'
+if pos[2] == 2:
+    pos[2] = '남'
+if pos[2] == 3:
+    pos[2] = '서'
+    
+board = []
+for i in range(n):
+    board.append(
+        list(map(int, input('').split(' ')))
+    )
+
+cleaned = [[False for j in range(m)] for i in range(n)]
+count = [0]
+
+
+finished = False
+result = 0
 
 while True:
-    room[r][c] = 1
-    d = get_left(d)
+    
+    # clean_here()
+    cleaned[pos[0]][pos[1]] = True
+    result += 1
 
-    # N
-    if d == 0:
-        if room[r-1][c] == 0:
-            continue
+    # count_reset_if_go()
+    count = 0
+
+    while True:
+
+        new_pos = get_left(pos)
+
+        # left_yet()
+        if not cleaned[new_pos[0]][new_pos[1]] and board[new_pos[0]][new_pos[1]] != 1:
+            # spin()
+            # go()
+            pos = new_pos
+            count = 0
+            break
+
         else:
+            # spin()
+            pos[2] = new_pos[2]
             count += 1
-    # E
-    if d == 1:
-        if room[r][c+1] == 0:
-            continue
-        else:
-            count += 1
-    # S
-    if d == 2:
-        if room[r+1][c] == 0:
-            continue
-        else:
-            count += 1
-    # W
-    if d == 3:
-        if room[r][c-1] == 0:
-            continue
-        else:
-            count += 1
+
+            # if count_reset_if_go() > 4:
+            if count == 4:
+                new_pos = get_back(pos)
+                # if can_back():
+                if board[new_pos[0]][new_pos[1]] != 1:
+                    # back()
+                    pos = new_pos
+                    count = 0
+                else:
+                    finished = True
+                    break
+    if finished:
+        break
+
+print(result)
