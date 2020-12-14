@@ -1,8 +1,8 @@
 - 백준  
     - 구현  
-        - [2048 (Easy)](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/2048 (Easy)/)
-        - [아기 상어](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/아기 상어/)
-        - [구슬 탈출 2](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/구슬 탈출 2/)
+        - [2048 (Easy)](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/2048%(Easy)/)
+        - [아기 상어](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/아기%상어/)
+        - [구슬 탈출 2](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/구슬%탈출%2/)
         - [테트로미노](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/테트로미노/)
         - [로봇 청소기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/로봇청소기/)
 
