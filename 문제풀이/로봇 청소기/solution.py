@@ -39,12 +39,13 @@ for i in range(n):
     )
 
 cleaned = [[False for j in range(m)] for i in range(n)]
-count = [0]
+# count = [0]
 
 
 finished = False
 result = 0
 
+# 청소
 while True:
     
     # clean_here()
@@ -54,6 +55,7 @@ while True:
     # count_reset_if_go()
     count = 0
 
+    # 회전
     while True:
 
         new_pos = get_left(pos)
