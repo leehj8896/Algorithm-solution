@@ -8,4 +8,4 @@
         - [로봇 청소기](https://github.com/leehj8896/problem-solving/tree/master/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EB%A1%9C%EB%B4%87%20%EC%B2%AD%EC%86%8C%EA%B8%B0)
 
     - DFS/BFS  
-        - [연구소](https://github.com/leehj8896/problem-solving/tree/master/연구소)
+        - [연구소](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/연구소)
