@@ -1,78 +1,77 @@
-import sys 
 
-def get_new_position(pos, d):
-
-    if d=='u':
-        return (pos[0]-1, pos[1])
-    if d=='d':
+def get_new_pos(pos, d):
+    if d == 'u':
         return (pos[0]+1, pos[1])
-    if d=='r':
-        return (pos[0], pos[1]+1)
-    if d=='l':
+    if d == 'd':
+        return (pos[0]-1, pos[1])
+    if d == 'l':
         return (pos[0], pos[1]-1)
+    if d == 'r':
+        return (pos[0], pos[1]+1)
 
 
-def out(r, c, pos):
-
-    if pos[0] >= 0 and pos[0] < r:
-        if pos[1] >= 0 and pos[1] < c:
+def out(pos):
+    if 0 <= pos[0] < len(board):
+        if 0 <= pos[1] < len(board[0]):
             return False
     return True
 
 
-def set_route(prev_list, pos, route_set):
+def get_ord(pos):
+    word = board[pos[0]][pos[1]]
+    return ord(word) - ord('A')
 
-    if pos[0] == 0 and pos[1] == 0:
-        route_set.add(pos)
+
+def dfs(curr_pos, count):
+
+    di = [1,-1,0,0]
+    dj = [0,0,1,-1]
+
+    global max_length
+
+    if count == 26:
+        max_length = 26
         return
 
-    set_route(prev_list, prev_list[pos[0]][pos[1]], route_set)
-    route_set.add(pos)
+    max_length = max(max_length, count)
 
-def rcs(board, result_list, prev_list, curr, route_set, visited):
+    # for d in ['u','d','l','r']:
+    for d in range(4):
 
-    for d in ['u','d','r','l']:
+        # new_pos = get_new_pos(curr_pos, d)
+        new_pos = (curr_pos[0]+di[d], curr_pos[1]+dj[d])
 
-        new_pos = get_new_position(curr, d)
-        if out(len(board), len(board[0]), new_pos):
+        if out(new_pos):
+            continue
+        if visited[get_ord(new_pos)]:
+        # if board[new_pos[0]][new_pos[1]] in visited:
             continue
 
-        route_set = set()
-        set_route(prev_list, new_pos, route_set)
-        if board[new_pos[0]][new_pos[1]] in route_set:
-            continue
+        # visited.add(board[new_pos[0]][new_pos[1]])
+        visited[get_ord(new_pos)] = True
+        dfs(new_pos, count+1)
+        visited[get_ord(new_pos)] = False
+        # visited.remove(board[new_pos[0]][new_pos[1]])
 
-        
-        if visited[new_pos[0]][new_pos[1]]:
-            continue
-
-        prev_list[new_pos[0]][new_pos[1]] = curr
-        visited[new_pos[0]][new_pos[1]] = True
-        rcs(board, result_list, prev_list, curr, route_set, visited)
-        visited[new_pos[0]][new_pos[1]] = False
-        result_list.append(route_set)
 
 
 def init():
+    n, m = map(int, input('').split(' '))
+    board = [list(input('')) for i in range(n)]
+    return n, m, board
 
-    board = []
-    r, c = map(int, input('').split(' '))
-    for i in range(r):
-        line = list(input(''))
-        board.append(line)
 
-    prev_list = [[(0,0) for j in range(c)] for i in range(r)]
-    visited = [[False for j in range(c)] for i in range(r)]
+n, m, board = init()
 
-    return r,c,board,prev_list, visited
+visited = [False] * 26
+visited[get_ord((0,0))] = True
+# visited = set()
+# visited.add(board[0][0])
 
-sys.setrecursionlimit(9999)
+max_length = float('-inf')
 
-r, c, board, prev_list, visited = init()
+start = (0,0)
 
-curr = (0,0)
-visited[0][0] = True
-result_list = []
-rcs(board, result_list, prev_list, curr, set(), visited)
+dfs(start, 1)
 
-print(max(result_list, key=lambda x:len(x)))
+print(max_length)
