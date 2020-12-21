@@ -1,10 +1,10 @@
 - 백준  
     - 구현  
-        - [2048 (Easy)](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/2048%20(Easy)/)
-        - [아기 상어](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/아기%20상어/)
-        - [구슬 탈출 2](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/구슬%20탈출%202/)
+        - [2048 (Easy)](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/2048(Easy)/)
+        - [아기 상어](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/아기상어/)
+        - [구슬 탈출 2](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/구슬탈출2/)
         - [테트로미노](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/테트로미노/)
-        - [로봇 청소기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/로봇%20청소기/)
+        - [로봇 청소기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/로봇청소기/)
 
     - DFS/BFS  
         - [연구소](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/연구소/)
@@ -12,3 +12,4 @@
         - [다리 만들기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/다리만들기/)
         - [알파벳](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/알파벳/)
         - [벽 부수고 이동하기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/벽부수고이동하기/)
+        - [욕심쟁이 판다](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/욕심쟁이판다/)
