@@ -4,8 +4,7 @@
 
 - 풀이
     1. 정렬 ([https://n-square.tistory.com/21](https://n-square.tistory.com/21))
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e1fa19d-05c0-4103-934e-61e93022379f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e1fa19d-05c0-4103-934e-61e93022379f/Untitled.png)
+        ![다운로드](https://user-images.githubusercontent.com/28583563/103411206-17c54c00-4bb2-11eb-9f7b-9e5ca9d3e3d7.png)
 
     2. 이진 탐색
 
