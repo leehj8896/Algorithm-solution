@@ -22,4 +22,4 @@
         - [컬러볼](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/컬러볼/)
 
     - 이진 탐색
-        - [피자 굽기]](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/피자굽기/)
+        - [피자 굽기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/피자굽기/)
