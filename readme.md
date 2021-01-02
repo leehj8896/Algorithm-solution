@@ -23,3 +23,4 @@
 
     - 이진 탐색
         - [피자 굽기](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/피자굽기/)
+        - [중량 제한](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/중량제한/)
