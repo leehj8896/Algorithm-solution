@@ -27,3 +27,6 @@
         - [사냥꾼](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/사냥꾼/)
         - [개똥벌레](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/개똥벌레/)
         - [반도체 설계](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/반도체설계/)
+
+    - 다이나믹 프로그래밍
+        - [LCS](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/LCS/)
