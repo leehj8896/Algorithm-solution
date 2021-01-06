@@ -30,3 +30,4 @@
 
     - 다이나믹 프로그래밍
         - [LCS](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/LCS/)
+        - [가장 긴 증가하는 부분 수열 4](https://github.com/leehj8896/problem-solving/tree/master/문제풀이/가장긴증가하는부분수열4/)
