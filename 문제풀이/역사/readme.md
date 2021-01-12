@@ -1,5 +1,7 @@
 - 출처 : [https://www.acmicpc.net/problem/1613](https://www.acmicpc.net/problem/1613)
 
+- 문제 : 백준 1613번 역사
+
 - 틀린 풀이 : 위상 정렬, DFS
     1. 각 노드를 정렬 (위상 정렬)
     2. 연결되지 않은 노드 분리 (DFS)
