@@ -22,6 +22,9 @@
     - 굳이 거리를 계산할 필요 없을 것 같아 bool 타입으로 바꿔보았다
     - Floyd-Warshall 알고리즘
         - O(N^3)
+        - 3차원 배열을 사용하지 않아도 되는 이유는 이해하기 조금 어렵다
+            - [https://youtu.be/5uqOvsVmfJw?t=990](https://youtu.be/5uqOvsVmfJw?t=990)
         - all-to-all 최단 경로 알고리즘
             - one-to-one 또는 one-to-all : 벨만-포드, 다익스트라 알고리즘
+
     - 다익스트라 알고리즘(N^2)을 모든 노드에 적용한 것(N)과 시간 복잡도 면에서 유사
