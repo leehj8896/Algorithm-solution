@@ -11,7 +11,7 @@
 - 틀린 이유 : 연결되어 있지만 관계를 모르는 경우가 존재  
     ![image](https://user-images.githubusercontent.com/28583563/104286494-75ce2980-54f8-11eb-9be9-0ace0933d311.png)
 
-- 맞은 풀이 : Floyd-Warshall
+- 맞은 풀이 : Floyd-Warshall, DP
     1. 2차원 거리 리스트 초기화
     2. 리스트[k][i][j] : 1부터 k까지의 노드만을 지나 i에서 j까지 도달하는 거리
     3. 모든 노드 간 거리 계산(N^2)을 N번 반복(3중 for문)
