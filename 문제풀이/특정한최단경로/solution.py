@@ -40,7 +40,7 @@ dist_list2 = dijkstra(goal1)
 dist_list3 = dijkstra(goal2)
 dist1 = dist_list1[goal1] + dist_list2[goal2] + dist_list3[n]
 dist2 = dist_list1[goal2] + dist_list3[goal1] + dist_list2[n]
-if min(dist1, dist2) == float('inf'):
+if dist1 == float('inf') or dist2 == float('inf'):
     print(-1)
 else:
     print(min(dist1, dist2))
