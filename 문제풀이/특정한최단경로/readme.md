@@ -16,3 +16,5 @@
     - 책에서 processed라는 리스트를 둬서 최단 거리를 구한 노드인지 체크를 했는데 계속 오답
     - 다른 풀이와 비교해보고 이 리스트를 주석 처리하니 정답
     - 다익스트라 알고리즘에 대해 더 공부해야겠다.
+
+- 출처 : [https://www.acmicpc.net/problem/1504](https://www.acmicpc.net/problem/1504)
